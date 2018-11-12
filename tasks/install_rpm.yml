@@ -4,4 +4,11 @@
     yum:
       name: "{{ jboss_webserver_rpm_name }}"
       state: installed
-    
+    notify: start and enable jboss-webserver
+
+  - name: Open the required ports
+    firewalld:
+      service: "{{ jboss_webserver_ports }}"
+      permanent: true
+      state: enabled
+

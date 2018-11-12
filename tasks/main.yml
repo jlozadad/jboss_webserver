@@ -8,8 +8,8 @@
   - name: Install - Download Jboss Webserver from RHN
     include_tasks: rhn_url.yml
     when: transfer_method == 'csp-to-host' and jboss_amq_exists.stat.exists == false
-  
-  - name: Install - 
-    include_tasks: install.yml
+
+  - name: Yum Install - From subscription repository  
+    include_tasks: rpm_install.yml
 
 

@@ -1,2 +1,10 @@
 ---
 # handlers file for jboss_webserver
+
+
+  - name: start and enable jboss-webserver
+    systemd:
+      enabled: yes
+      name: "{{ jboss_webserver_service }}"
+      state: started
+
