@@ -1,2 +1,13 @@
 ---
 # defaults file for jboss_webserver
+
+jboss_version:
+jboss_webserver_artifact_name:
+jboss_webserver_rpm_name: '@jws5'
+jboss_webserver_distribution:
+jboss_webserver_artifact_source:
+jboss_root_dir: /opt/jboss/tomcat
+jboss_webserver_install_dir:
+jboss_webserver_user:
+jboss_webserver_group:
+jboss_webserver_service: jws5-tomcat.service

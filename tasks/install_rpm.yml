@@ -1,0 +1,7 @@
+---
+
+  - name: Install the Jboss Webserver RPM Group
+    yum:
+      name: "{{ jboss_webserver_rpm_name }}"
+      state: installed
+    
