@@ -6,6 +6,7 @@ jboss_webserver_artifact_name:
 jboss_webserver_rpm_name: 
   - '@jws5'
   - jws5-tomcat-selinux
+  - jws5-tomcat-vault
 jboss_webserver_distribution:
 jboss_webserver_artifact_source:
 jboss_root_dir: /opt/jboss/tomcat
