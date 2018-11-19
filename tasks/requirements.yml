@@ -1,0 +1,24 @@
+---
+
+  - name: Set Jboss Webserver Artifact Facts
+    set_fact:
+      jboss_webserver_artifact_tmp_dest: "{{ '/tmp/' + jboss_webserver_artifact_name }}"
+
+  - name: Create Jboss Webserver Group
+    group:
+      name: "{{ jboss_webserver_group }}"
+      state: present
+    become_user: root
+
+  - name: Create Jboss Webserver User
+    user:
+      name: "{{ jboss_webserver_user }}"
+      group: "{{ jboss_webserver_user }}"
+      state: present
+    become_user: root
+
+  - name: Check if Jboss Webserver Exists
+    stat:
+      path: "{{ jboss_webserver_install_dir }}"
+    register: jboss_webserver_exists
+
