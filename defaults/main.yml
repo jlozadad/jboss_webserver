@@ -1,8 +1,16 @@
 ---
 # defaults file for jboss_webserver
 
-jboss_version:
-jboss_webserver_artifact_name:
+transfer_method: rpm
+jboss_version: 5.0.0
+jboss_artifact_platform_architecture: RHEL7-x86_64
+jboss_webserver_artifact_name: "jws-application-server-{{ jboss_version }}.zip"
+jboss_webserver_artifact_name_arch: "jws-application-server{{ jboss_version }}-{{jboss_artifact_platform_architecture }}"
+jboss_webserver_install_dir:
+jboss_webserver_remote_src:
+jboss_user: jboss_webserver
+jboss_group: jboss_webserver
+jboss_webserver_distribution:
 jboss_webserver_rpm_name: 
   - '@jws5'
   - jws5-tomcat-selinux
