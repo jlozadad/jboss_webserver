@@ -1,1 +1,19 @@
 ---
+
+  - name: Ensure Jboss Webserver directory exists
+    file:
+      path: "{{ jboss_webserver_install_dir | dirname }}"
+      state: directory
+      owner: "{{ jboss_user }}"
+      group: "{{ jboss_group }}"
+    become_user: root
+
+  - name: Check existence of Jboss Webserver
+    unarchive:
+      src: "{{ jboss_webserver_distribution }}"
+      dest: "{{ jboss_webserver_install_dir | dirname }}"
+      owner: "{{ jboss_user }}"
+      group: "{{ jboss_group }}"
+      creates: "{{ jboss_webserver_install_dir }}"
+      remote_src: "{{ jboss_webserver_remote_src | default('no') }}"
+
